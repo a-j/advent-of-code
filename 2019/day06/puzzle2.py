@@ -79,3 +79,34 @@ graph = construct_graph(input_map)
 begin = get_orbit_for_node(graph, 'YOU')
 end = get_orbit_for_node(graph, 'SAN')
 print(compute_min_orbital_transfers(graph, begin, end))
+
+
+### Alternate (much better) solution - https://github.com/Gravitar64/Advent-of-Code-2019/blob/master/AoC_Tag%2006a.py
+# from collections import defaultdict
+# planets = defaultdict(list)
+
+# # orbits = "COM)B B)C C)D D)E E)F B)G G)H D)I E)J J)K K)L K)YOU I)SAN".split()
+# with open('input.txt') as f:
+#     orbits = f.read().splitlines()
+
+# for orbit in orbits:
+#     planet, satellite = orbit.split(')')
+#     planets[planet].append(satellite)
+#     planets[satellite].append(planet)
+#     if satellite == 'YOU':
+#         start = planet
+#     if satellite == 'SAN':
+#         end = planet
+
+# path = set()
+# def find_way(node, counter):
+#     path.add(node)
+#     if node == end:
+#         print(counter)
+#         return True
+#     for next_node in planets[node]:
+#         if next_node in path:
+#             continue
+#         find_way(next_node, counter+1)
+
+# find_way(start, 0)

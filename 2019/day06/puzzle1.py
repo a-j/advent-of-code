@@ -51,3 +51,25 @@ with open('input.txt') as file:
 graph = construct_graph(input_map)
 print(compute_orbits(graph))
 #print(compute_orbits_for_node(graph, 'L'))
+
+
+#### Alternate (much better) solution - https://github.com/Gravitar64/Advent-of-Code-2019/blob/master/AoC_Tag%2006.py
+# from collections import defaultdict
+# planets = defaultdict(list)
+
+# # orbits = "COM)B B)C C)D D)E E)F B)G G)H D)I E)J J)K K)L".split()
+# with open('input.txt') as f:
+#     orbits = f.read().splitlines()
+
+# for orbit in orbits:
+#     planet, satellite = orbit.split(')')
+#     planets[planet].append(satellite)
+
+# orbit_counts = {}
+# def count_orbits(node, counter):
+#     orbit_counts[node] = counter
+#     for satellite in planets[node]:
+#         count_orbits(satellite, counter+1)
+
+# count_orbits('COM', 0)
+# print(sum(orbit_counts.values()))
