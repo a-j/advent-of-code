@@ -101,7 +101,6 @@ for phase_setting in permutation(phase_settings):
         output = amplifier_5.process_intcode(output)
         if amplifier_5.program_halted:
             break
-    if amplifier_5.output_signal > max_thrust:
-        max_thrust = amplifier_5.output_signal
+    max_thrust = max(max_thrust, amplifier_5.output_signal)
 
 print(max_thrust)
