@@ -99,3 +99,7 @@ computer.process_intcode(1)
 # puzzle 2
 computer = IntCodeComputer(memory.copy())
 computer.process_intcode(2)
+
+
+## Another way to think about the problem - probably a better solution
+## https://github.com/benediktwerner/AdventOfCode/blob/master/2019/day09/sol.py
